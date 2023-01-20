@@ -16,11 +16,11 @@ This module will focus on the steps required to build the cloud components of th
 
 Each of the following sections provides an implementation overview and detailed, step-by-step instructions. The overview should provide enough context for you to complete the implementation if you're already familiar with the AWS Management Console or you want to explore the services yourself without following a walkthrough.
 
-### 1. Create a New REST API
+## 1. Create a New REST API
 
 Use the Amazon API Gateway console to create a new API named WildRydes.
 
-#### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. Go to the Amazon API Gateway Console
 
@@ -131,11 +131,11 @@ Create a new resource called /ride within your API. Then create a POST method fo
 
 ![image](https://user-images.githubusercontent.com/115881685/209075343-5f9ca067-0ee0-4ae2-ae6b-89df67bd70bf.png)
 
-##### 4. Deploy Your API
+## 4. Deploy Your API
 
 From the Amazon API Gateway console, choose Actions, Deploy API. You'll be prompted to create a new stage. You can use prod for the stage name.
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. In the Actions drop-down list select Deploy API.
 
@@ -147,64 +147,50 @@ From the Amazon API Gateway console, choose Actions, Deploy API. You'll be promp
 
 5. Note the Invoke URL. You will use it in the next section.
 
-##### 5. Update the Website Config
+## 5. Update the Website Config
 
 Update the /js/config.js file in your website deployment to include the invoke URL of the stage you just created. You should copy the invoke URL directly from the top of the stage editor page on the Amazon API Gateway console and paste it into the _config.api.invokeUrl key of your sites /js/config.js file. Make sure when you update the config file it still contains the updates you made in the previous module for your Cognito user pool.
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. On your Cloud9 development environment open js/config.js
 
 2. Update the invokeUrl setting under the api key in the config.js file. Set the value to the Invoke URL for the deployment stage your created in the previous section. An example of a complete config.js file is included below. Note, the actual values in your file will be different.
 
+```
 window._config = {
-
     cognito: {
-    
-        userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb
-        
-        userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv
-        
-        region: 'us-west-2' // e.g. us-east-2
-        
+        userPoolId: 'us-west-2_uXboG5pAb', // e.g. us-east-2_uXboG5pAb 
+        userPoolClientId: '25ddkmj4v6hfsfvruhpfi7n4hv', // e.g. 25ddkmj4v6hfsfvruhpfi7n4hv 
+        region: 'us-west-2' // e.g. us-east-2  
     },
-    
     api: {
-    
-        invokeUrl: 'https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,
-        
-    }
-    
+        invokeUrl: 'https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod,   
+    }   
 };
+```
 
 3. Save the modified file making sure the filename is still config.js.
 
 4. Commit the changes to your git repository:
 
+```
 $ git add js/config.js   
-
 $ git commit -m "configure api invokeURL"
-
 $ git push
-
 ...
-
 Counting objects: 4, done.
-
 Compressing objects: 100% (4/4), done.
-
 Writing objects: 100% (4/4), 422 bytes | 422.00 KiB/s, done.
-
 Total 4 (delta 3), reused 0 (delta 0)
-
 To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
-   c15d5d5..09f1c9a  master -> master
-   
+c15d5d5..09f1c9a  master -> master
+```
   Amplify Console should pick up the changes and begin building and deploying your web application. Watch it to verify the completion of the deployment.
   
-##### Implementation Validation
+## Implementation Validation
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. Visit /ride.html under your website domain.
 
@@ -216,7 +202,7 @@ To https://git-codecommit.us-east-1.amazonaws.com/v1/repos/wildrydes-site
 that a unicorn is on its way and then see a unicorn icon fly to your pickup
 location.
 
-##### ⭐ Recap
+## ⭐ Recap
 
 🔑 Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. You can easily plug in Authorization via Amazon Cognito and backends such as AWS Lambda to create completely serverless APIs.
 
@@ -224,6 +210,6 @@ location.
 
 ⭐ Congratulations, you have completed the Wild Rydes Web Application Workshop! Check out our other workshops covering additional serverless use cases.
 
-##### Next
+## Next
 
 Delete all recoueses in this workshop in order to avoid charges.
