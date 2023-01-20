@@ -34,15 +34,15 @@ Use the Amazon API Gateway console to create a new API named WildRydes.
 
 ![image](https://user-images.githubusercontent.com/115881685/209073568-f242ba49-41ce-4bd9-9aff-e9c7ed3bb36e.png)
 
-##### 2. Create a Cognito User Pools Authorizer
+## 2. Create a Cognito User Pools Authorizer
 
-##### Background
+### Background
 
 Amazon API Gateway can use the JWT tokens returned by Cognito User Pools to authenticate API calls. In this step you'll configure an authorizer for your API to use the user pool you created in User Management.
 
-##### High-Level Instructions
+## High-Level Instructions
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. Under your newly created API, choose Authorizers.
 
@@ -62,9 +62,9 @@ Amazon API Gateway can use the JWT tokens returned by Cognito User Pools to auth
 
 ![image](https://user-images.githubusercontent.com/115881685/209074089-2d808aee-4af0-421f-bb4a-f5b10e07107e.png)
 
-##### Verify your authorizer configuration
+## Verify your authorizer configuration
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. Open a new browser tab and visit /ride.html under your website's domain.
 
@@ -83,11 +83,11 @@ dialog.
 
 7. Click Test button and verify that the response code is 200 and that you see the claims for your user displayed.
 
-##### 3. Create a new resource and method
+## 3. Create a new resource and method
 
 Create a new resource called /ride within your API. Then create a POST method for that resource and configure it to use a Lambda proxy integration backed by the RequestUnicorn function you created in the first step of this module.
 
-##### ✅ Step-by-step directions
+## ✅ Step-by-step directions
 
 1. In the left nav, click on Resources under your WildRydes API.
 
